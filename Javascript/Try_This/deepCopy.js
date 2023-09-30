@@ -15,6 +15,27 @@ const kim = {
   [Symbol()]: 9,
   [Symbol()]: Symbol("symbol2"),
 };
-const deepCopy = (name) => {};
+
+const deepCopy = (obj) => {
+  const newObj = {};
+  for (const i of Reflect.ownKeys(obj)) {
+    console.log("reflect >>>", i);
+    // console.log(typeof obj[i]);
+    if (typeof obj[i] === "object" && obj[i]) {
+      console.log("test");
+      newObj[i] = deepCopy(obj[i]);
+    } else newObj[i] = obj[i];
+  }
+  return newObj;
+};
 
 const newKim = deepCopy(kim);
+
+// newKim.nid = 6;
+newKim.add[1] = 9;
+// newKim.add[3].aid = 5;
+newKim.oo.addr.city = "Busan";
+newKim.oo.name = "kwon";
+
+console.log("kim>>", kim);
+console.log("newKim>>", newKim);
