@@ -16,26 +16,24 @@ const kim = {
   [Symbol()]: Symbol("symbol2"),
 };
 
-const deepCopy = (obj) => {
-  const newObj = {};
-  for (const i of Reflect.ownKeys(obj)) {
-    console.log("reflect >>>", i);
-    // console.log(typeof obj[i]);
-    if (typeof obj[i] === "object" && obj[i]) {
-      console.log("test");
-      newObj[i] = deepCopy(obj[i]);
-    } else newObj[i] = obj[i];
+const solution = (obj) => {
+  const newObj = Array.isArray(obj) ? [] : {};
+
+  for (let key of Reflect.ownKeys(obj)) {
+    if (typeof obj[key] === "object" && obj[key] !== null) {
+      newObj[key] = solution(obj[key]);
+    } else {
+      newObj[key] = obj[key];
+    }
   }
+
   return newObj;
 };
 
-const newKim = deepCopy(kim);
+const newKim = solution(kim);
 
-// newKim.nid = 6;
-newKim.add[1] = 9;
-// newKim.add[3].aid = 5;
-newKim.oo.addr.city = "Busan";
-newKim.oo.name = "kwon";
+kim.oo.id = 3;
+kim.add[3].aid = 3;
 
-console.log("kim>>", kim);
-console.log("newKim>>", newKim);
+console.log("kim >>> ", kim);
+console.log("newKim >>>", newKim);
