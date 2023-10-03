@@ -22,9 +22,24 @@ for (let i in obj) {
 }
 
 // 5. for-of문을 사용하여 프로퍼티 값을 출력하시오.
-// for (let i of obj) {
-//   console.log(i);
-// }
+const myIterator = (object) => {
+  object[Symbol.iterator] = () => {
+    const values = Object.values(object);
+    let num = -1;
+    return {
+      next: () => {
+        num += 1;
+        if (values.length === num) return { value: undefined, done: true };
+        else return { value: values[num], done: false };
+      },
+    };
+  };
+};
+
+myIterator(obj);
+for (let i of obj) {
+  console.log("Object iterable >>>", i);
+}
 
 // level 프로퍼티가 열거되지 않도록 설정하시오. // Object.defineProperty
 Object.defineProperty(obj, "level", {
