@@ -15,9 +15,9 @@ const once = (fn) => {
 const myFunction = (x, y) => console.log(x, y);
 
 const onceTest = once(myFunction);
-a(1, 2);
-a(1, 2);
-a(1, 2);
+onceTest(1, 2);
+onceTest(1, 2);
+onceTest(1, 2);
 
 // exsample2
 
@@ -25,3 +25,5 @@ const myFunction2 = (name, addr) =>
   console.log(`나의 이름은 ${name}이고, 주소는 ${addr} 입니다.`);
 
 const onceTest2 = once(myFunction2);
+onceTest2("eunbi", "Seoul");
+onceTest2("eungbi", "Busan");
