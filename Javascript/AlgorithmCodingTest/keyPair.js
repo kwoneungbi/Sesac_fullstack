@@ -25,12 +25,12 @@ const keyPair = (arr, N) => {
 
   for (let i = 0; i < arr.length; i += 1) {
     for (let j = 0; j < arr.length; j += 1) {
-      if (arr[i] + arr[j] === N) {
-        result.push(i, j);
-      }
+      if (arr[i] + arr[j] === N) result.push(i, j);
+
+      if (result.length === 2) break;
     }
   }
-  result.length = 2;
+  // result.length = 2;
   return result;
 };
 
