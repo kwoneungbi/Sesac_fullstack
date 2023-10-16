@@ -2,7 +2,10 @@
 주어진 정수 배열에서 각 요소를 제곱한 값들과 제곱근 값들을 반환하는 함수를 
 for-of, forEach, map을 사용하여 각각 작성하시오.
 */
-arr = [1, 4, 9];
+
+import assert from "assert";
+
+let arr = [1, 4, 9];
 
 const powSqrtByForOf = (array) => {
   let result = [];
@@ -34,6 +37,15 @@ const powSqrtByMap = (array) => {
   return [result, result1];
 };
 
-console.log(powSqrtByForOf(arr)); // [[1, 16, 81], [1, 2, 3]]
-console.log(powSqrtByForEach(arr)); // [[1, 16, 81], [1, 2, 3]]
-console.log(powSqrtByMap(arr)); // [[1, 16, 81], [1, 2, 3]]
+assert.deepStrictEqual(powSqrtByForEach(arr), [
+  [1, 16, 81],
+  [1, 2, 3],
+]);
+assert.deepStrictEqual(powSqrtByForOf(arr), [
+  [1, 16, 81],
+  [1, 2, 3],
+]);
+assert.deepStrictEqual(powSqrtByMap(arr), [
+  [1, 16, 81],
+  [1, 2, 3],
+]);
