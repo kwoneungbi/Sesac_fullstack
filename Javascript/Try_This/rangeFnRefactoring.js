@@ -1,26 +1,41 @@
-import assert from "assert";
+// import assert from "assert";
 
-const range = (start, end, step = start > end ? -1 : 1) => {
-  // if (end === undefined) start > 0 ? (start = 1) : (end = start);
-  if (start === end) return [start];
+// const range = (start, end, step = start > end ? -1 : 1) => {
+//   // if (end === undefined) start > 0 ? (start = 1) : (end = start);
+//   if (start === end) return [start];
 
-  // if ((start > end && step > 0) || (start < end && step < 0)) return [];
-  if ((start - end) * step > 0) return [];
+//   // if ((start > end && step > 0) || (start < end && step < 0)) return [];
+//   if ((start - end) * step > 0) return [];
 
-  const tmp = start;
-  // end = end ?? (start > 0 ? ((start = 1), tmp) : start === 0 ? 0 : -1); // null병합 사용시 우선순위 조심하기
-  end = end ?? (start > 0 ? ((start = 1), tmp) : start % 2);
+//   const tmp = start;
+//   // end = end ?? (start > 0 ? ((start = 1), tmp) : start === 0 ? 0 : -1); // null병합 사용시 우선순위 조심하기
+//   end = end ?? (start > 0 ? ((start = 1), tmp) : start % 2);
 
-  const results = [];
-  if (end === undefined || step === 0) return [start];
-  // const until = (i) => (start > end ? i >= end : i <= end);
-  for (let i = start; start > end ? i >= end : i <= end; i += step) {
-    results.push(i);
-    // if (until(i)) return results;
-  }
-  return results;
+//   const results = [];
+//   if (end === undefined || step === 0) return [start];
+//   // const until = (i) => (start > end ? i >= end : i <= end);
+//   for (let i = start; start > end ? i >= end : i <= end; i += step) {
+//     results.push(i);
+//     // if (until(i)) return results;
+//   }
+//   return results;
+// };
+
+const range = (start, end, step = start - end <= 0 ? 1 : -1) => {
+  const result = [];
+  // if ((start - end > 0 && step > 0) || (start - end < 0 && step < 0))
+  if ((start - end) * step > 0) return result;
+  if (step === 0 || start === end || (start === 0 && end === undefined))
+    return [start];
+  for (let i = start; start <= end ? i <= end : i >= end; i += step)
+    result.push(i);
+  if (end === undefined)
+    for (let i = start > 0 ? 1 : start; start > 0 ? i <= start : i < 0; i += 1)
+      result.push(i);
+  return result;
 };
 
+console.log("와");
 assert.deepStrictEqual(range(1, 10, 1), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 assert.deepStrictEqual(range(1, 10, 2), [1, 3, 5, 7, 9]);
 
@@ -54,4 +69,4 @@ assert.deepStrictEqual(range(0, -3), [0, -1, -2, -3]);
 assert.deepStrictEqual(range(-3, 0), [-3, -2, -1, 0]);
 assert.deepStrictEqual(range(5, 1), [5, 4, 3, 2, 1]);
 
-console.log("Succeed!!!");
+// console.log("Succeed!!!");
