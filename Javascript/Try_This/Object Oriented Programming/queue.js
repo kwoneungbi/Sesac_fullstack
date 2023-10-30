@@ -28,7 +28,7 @@ assert.deepStrictEqual(queue.toArray(), []);
 class Queue1 {
   #arr;
   constructor(...args) {
-    this.#arr = args;
+    this.#arr = Array.isArray(args[0]) ? args[0] : args;
   }
 
   enqueue(value) {
@@ -36,7 +36,7 @@ class Queue1 {
   }
 
   dequeue() {
-    return this.#arr.unshift();
+    return this.#arr.shift();
   }
 
   toArray() {
@@ -49,3 +49,9 @@ queue1.enqueue(3); // 추가하기
 assert.deepStrictEqual(queue1.toArray(), [3]);
 queue1.dequeue();
 assert.deepStrictEqual(queue1.toArray(), []);
+
+const queue2 = new Queue1(1, 2);
+queue2.enqueue(3);
+assert.deepStrictEqual(queue2.toArray(), [1, 2, 3]);
+assert.deepEqual(queue2.dequeue(), 1);
+assert.deepEqual(queue2.toArray(), [2, 3]);
