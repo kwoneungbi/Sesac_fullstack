@@ -1,10 +1,12 @@
+# **Type 제한자**
+
 > **오늘은 타입 제한자에 대해 공부해 보려고 한다.**
 
 - top 타입 : any 타입과 unknown 타입에 대해 알기
 - 타입 서술어의 반환타입인 is 키워드에 대해 공부하기
 - 타입 연산자 : keyof를 이용하여 타입의 키 알아내기, typeof로 값의 타입 알아내기
 
-### top 타입
+### **top 타입**
 
 top 타입은 시스템에서 가능한 모든 값을 나타내는 타입이다.
 모든 타입은 top타입에 할당이 가능하다.
@@ -24,7 +26,7 @@ any 타입의 유연성을 유지하면서도, 타입스크립트의 타입 체�
 
 ![](https://velog.velcdn.com/images/eungbi/post/9f36e1f5-426b-4c32-94c8-381794c09504/image.png)이때 typeof를 사용하여 타입을 unknownd에서 string으로 좁혀준다.
 
-### is 키워드
+### **is 키워드**
 
 instaceof 이나 typeof와 같은 자바스크립트 구문을 사용하여 타입을 좁히는데는 한계가 있다. 로직을 함수로 감싸면 타입을 좁힐 수 없게 된다.
 
@@ -34,7 +36,7 @@ instaceof 이나 typeof와 같은 자바스크립트 구문을 사용하여 타�
 
 ![](https://velog.velcdn.com/images/eungbi/post/da6b6d85-3a04-4376-bc52-6cb2176f239c/image.png)
 
-### 타입 연산자
+### **타입 연산자**
 
 **`keyof`** :
 keyof 연산자: keyof는 타입스크립트의 인덱스 타입 쿼리 연산자로, 특정 타입의 모든 키를 추출하여 그 키들의 유니온 타입을 생성한다.![](https://velog.velcdn.com/images/eungbi/post/0adc1f18-dee6-47a0-9e25-3e86541ee8b0/image.png)
