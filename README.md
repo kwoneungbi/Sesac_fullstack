@@ -9,7 +9,7 @@
 - 0장: [Computer Architecture / Compiler](https://github.com/kwoneungbi/Sesac_fullstack/blob/master/Javascript/Study/%231_ComputerArchitecture/README.md)
 - 1장: [Hoisting](https://github.com/kwoneungbi/Sesac_fullstack/blob/master/Javascript/Study/%232_Hoistring/README.md)
 - 2장: [Lexical Scope / Execution Context](https://github.com/kwoneungbi/Sesac_fullstack/blob/master/Javascript/Study/%233_ExecutionContext/README.md)
-- 3장: [Closure](https://github.com/kwoneungbi/Sesac_fullstack/blob/master/Javascript/Study/%234_Closure/README.md)
+- 3장: [Closure](https://github.com/kwoneungbi/Sesac_fullstack/blob/master/Javascript/Study/%234_Closure/README.md) ⭐️
 - 4장: [memoized](https://github.com/kwoneungbi/Sesac_fullstack/blob/master/Javascript/Study/%235_Memoized/README.md)
 - 5장: [Object Deep Copy](https://github.com/kwoneungbi/Sesac_fullstack/blob/master/Javascript/Study/%236_Object/TryThis/README.md)
 - 6장: [range](https://github.com/kwoneungbi/Sesac_fullstack/blob/master/Javascript/Study/%238_Array/TryThis/rangeRefactoring.js)
