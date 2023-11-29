@@ -1,5 +1,7 @@
 # 평가 문제 : 주문 받기 및 영수증 출력하기
 
+[📌 코드 보러가기](https://github.com/kwoneungbi/Sesac_fullstack/blob/master/Javascript/Study/%234_Closure/TryThis/billPrint.js)
+
 다음과 같이 작동하는 bill 함수를 클로저를 이용하여 작성하시오.<br>
 부가세 = Math.round((금액/1.1) \* 0.1)
 

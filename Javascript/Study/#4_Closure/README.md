@@ -2,6 +2,8 @@
 
 > ✍ **목표: 클로저에 대해 이해하기**
 
+[Closure 평가 문제](https://github.com/kwoneungbi/Sesac_fullstack/blob/master/Javascript/Study/%234_Closure/TryThis/README.md)
+
 ### 🔎 **closure 란?**
 
 - "A closure is the combination of a function and the lexical environment within which that function was declared." - MDN
