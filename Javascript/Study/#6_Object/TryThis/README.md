@@ -1,5 +1,7 @@
 # Try This: Object Deep Copy
 
+[코드 보러가기](https://github.com/kwoneungbi/Sesac_fullstack/blob/master/Javascript/Study/%236_Object/TryThis/deepCopy.js)
+
 > 객체 kim을 깊은 복사하는 deepCopy 함수를 작성하시오.
 
 ```js
